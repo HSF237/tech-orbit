@@ -17,7 +17,10 @@
 | 🌗 **Dark mode** | Toggle with 🌙 — remembers your choice |
 | 🎉 **Events** | Community meetup Oct 30 with a live countdown |
 | 👾 **Playful UI** | Confetti bursts, tilt cards, starfield with shooting stars, orbit splash screen |
-| 📊 **Road to 500** | Live member goal tracker |
+| 📊 **Road to 500** | Live member goal tracker + confetti storm when the goal drops 🎉 |
+| 🔍 **Quick search** | Press `/` (or the 🔍 button) to search the whole site |
+| ⌨️ **Shortcuts** | `g`+`h` home · `g`+`e` events · `d` dark mode · 5× logo tap or Konami code for a secret 🪐 |
+| 🤖 **Orbit buddy** | A friendly planet pops up with one tip a day |
 | 🗨️ **WhatsApp-first** | Join the hub and talk to us directly |
 | ♿ **Accessible** | Focus rings, ARIA labels, respects reduced-motion settings |
 
@@ -29,7 +32,9 @@ Home · About (our story) · Events · Projects · Groups · Learn · Join
 
 The entire app is **one self-contained `index.html`** — no build step, no frameworks, no dependencies. Plain HTML + CSS + vanilla JS with hash routing.
 
-Supporting PWA/social assets: `manifest.webmanifest`, `sw.js`, `og.png`, `icon-192.png`, `icon-512.png`.
+Supporting assets: `manifest.webmanifest`, `sw.js`, `og.png`, `icon-192.png`, `icon-512.png`, `404.html`.
+
+Every push is validated by CI (`.github/workflows/check.yml` → `scripts/checks.py`).
 
 ## 🚀 Run locally
 
@@ -55,3 +60,14 @@ Ideas and bug reports welcome — open an issue or ping us in the WhatsApp hub!
 ## 📄 License
 
 © Tech Orbit community. All rights reserved.
+
+## 🌐 Custom domain (optional)
+
+1. Buy a domain (e.g. `techorbit.app`)
+2. Repo **Settings → Pages** → Custom domain → enter it
+3. At your DNS provider add: `A` records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (or `CNAME` → `HSF237.github.io`)
+4. Enable **Enforce HTTPS** once the certificate is issued
+
+## 🏷️ Versioning
+
+Each release is tagged (`v1.0`, `v1.1`, …) — the live version badge is in the site footer. To roll back: re-point a tag or revert a commit; Pages redeploys automatically.
